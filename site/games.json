@@ -28,5 +28,15 @@
     "thumbnail": "assets/stack_rush.png",
     "instructions": "Pulsa la barra Espaciadora o haz click/toca en la pantalla para soltar y apilar el bloque en movimiento sobre el anterior.",
     "color": "#00ff88"
+  },
+  {
+    "id": "aventura-canaria",
+    "name": "Aventura en Canarias",
+    "description": "Viaja por las islas de Canarias encarnando a un aborigen Guanche en este juego de plataformas vectorial. Recoge pintaderas y supera los volcanes de Tenerife, la laurisilva de La Gomera y las dunas de Gran Canaria.",
+    "category": "Aventura",
+    "path": "../games/aventura-canaria/index.html",
+    "thumbnail": "assets/aventura_canaria.png",
+    "instructions": "Usa A/D o las flechas de dirección para moverte. Pulsa la barra Espaciadora, W o Flecha Arriba para saltar sobre las plataformas y enemigos.",
+    "color": "#ffcc00"
   }
 ]

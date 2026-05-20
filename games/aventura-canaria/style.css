@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Press Start 2P', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+}
+
+.game-container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  border: 4px solid #3a86c8; /* Canary Blue */
+  box-shadow: 0 0 25px rgba(58, 134, 200, 0.6), inset 0 0 25px rgba(255, 204, 0, 0.3); /* Yellow/Blue glow */
+  background: radial-gradient(circle, #09131a 0%, #020508 100%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#gameCanvas {
+  display: block;
+  background: transparent;
+}
+
+.ui-bar {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #ffcc00; /* Canary Yellow */
+  z-index: 5;
+  text-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
+}
+
+.ui-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.level-container {
+  color: #fff;
+  font-size: 9px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.lives-container {
+  color: #ff3b3b;
+  text-shadow: 0 0 5px rgba(255, 59, 59, 0.7);
+}
+
+/* Virtual Mobile controls */
+.mobile-controls {
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.mobile-controls.hidden {
+  display: none !important;
+}
+
+.dpad, .action-pad {
+  display: flex;
+  gap: 15px;
+  pointer-events: auto;
+}
+
+.touch-btn {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: rgba(10, 20, 30, 0.6);
+  border: 3px solid #3a86c8;
+  color: #3a86c8;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.1s ease;
+  box-shadow: 0 0 10px rgba(58, 134, 200, 0.4);
+}
+
+.touch-btn:active {
+  background: #3a86c8;
+  color: #000;
+  box-shadow: 0 0 20px #3a86c8;
+  transform: scale(0.9);
+}
+
+.touch-btn.action-btn {
+  border-color: #ffcc00;
+  color: #ffcc00;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+}
+
+.touch-btn.action-btn:active {
+  background: #ffcc00;
+  color: #000;
+  box-shadow: 0 0 20px #ffcc00;
+}
+
+/* Screens */
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(3, 8, 12, 0.95);
+  z-index: 10;
+  text-align: center;
+  padding: 30px;
+}
+
+.screen.hidden {
+  display: none;
+}
+
+h1 {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #ffcc00;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  animation: pulse 1.5s infinite alternate;
+}
+
+.game-over-title {
+  color: #ff3333;
+  text-shadow: 0 0 10px rgba(255, 51, 51, 0.6);
+}
+
+.win-title {
+  color: #00ff88;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+}
+
+.game-info {
+  max-width: 550px;
+  font-size: 10px;
+  color: #b0c4de;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  border: 1px solid rgba(58, 134, 200, 0.2);
+  padding: 15px;
+  border-radius: 6px;
+  background: rgba(58, 134, 200, 0.05);
+}
+
+.game-info strong {
+  color: #ffcc00;
+}
+
+button {
+  font-family: 'Press Start 2P', monospace;
+  background: transparent;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  padding: 15px 35px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #ffcc00;
+  color: #000;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.controls-info {
+  font-size: 8px;
+  color: #666;
+  line-height: 2;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.03);
+  }
+}

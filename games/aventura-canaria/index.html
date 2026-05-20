@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventura en Canarias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <!-- UI Bar -->
+    <div class="ui-bar">
+      <div class="ui-left">
+        <div class="score-container">PINTADERAS: <span id="score">0</span> / 5</div>
+        <div class="level-container"><span id="levelName">ISLA 1: TENERIFE</span></div>
+      </div>
+      <div class="ui-right">
+        <div class="lives-container">VIDAS: <span id="lives">❤❤❤</span></div>
+      </div>
+    </div>
+    
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <!-- Virtual mobile touch pads (hidden on desktop) -->
+    <div id="mobileControls" class="mobile-controls hidden">
+      <div class="dpad">
+        <button id="btnLeft" class="touch-btn"><i class="arrow-left">◀</i></button>
+        <button id="btnRight" class="touch-btn"><i class="arrow-right">▶</i></button>
+      </div>
+      <div class="action-pad">
+        <button id="btnJump" class="touch-btn action-btn"><i>▲</i></button>
+      </div>
+    </div>
+
+    <!-- Start Screen -->
+    <div class="screen" id="startScreen">
+      <h1>AVENTURA CANARIA</h1>
+      <p class="subtitle">¡FELIZ DÍA DE CANARIAS!</p>
+      <div class="game-info">
+        <p>Controla al joven Guanche en su viaje por las islas.</p>
+        <p>Recoge las <strong>Pintaderas</strong> sagradas y llega hasta el <strong>Drago Mágico</strong> para viajar a la siguiente isla.</p>
+      </div>
+      <button id="startButton">JUGAR</button>
+      <div class="controls-info">
+        <p>A / D o Flechas: Moverse</p>
+        <p>W, Flecha Arriba o Espacio: Saltar</p>
+      </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div class="screen hidden" id="gameOverScreen">
+      <h1 class="game-over-title">FIN DE LA AVENTURA</h1>
+      <p>Te has quedado sin energías en el camino...</p>
+      <button id="restartButton">REINTENTAR</button>
+    </div>
+
+    <!-- Win Screen -->
+    <div class="screen hidden" id="winScreen">
+      <h1 class="win-title">¡VICTORIA!</h1>
+      <p class="subtitle">HAS UNIDO LAS SIETE ISLAS</p>
+      <div class="game-info">
+        <p>¡Has recolectado las pintaderas sagradas y completado el viaje por el archipiélago!</p>
+        <p>¡Feliz Día de Canarias!</p>
+      </div>
+      <button id="winPlayAgainButton">JUGAR DE NUEVO</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
