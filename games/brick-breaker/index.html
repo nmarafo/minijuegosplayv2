@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Brick Breaker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="ui-bar">
+      <div class="score-container">SCORE: <span id="score">0000</span></div>
+      <div class="lives-container">LIVES: <span id="lives">❤❤❤</span></div>
+    </div>
+    
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <div class="screen" id="startScreen">
+      <h1>BRICK BREAKER</h1>
+      <p class="subtitle">NEON ARCADE CHALLENGE</p>
+      <button id="startButton">JUGAR</button>
+      <div class="controls-info">
+        <p>Mueve el ratón para mover la pala</p>
+        <p>A / D o Flechas: Control Alternativo</p>
+      </div>
+    </div>
+
+    <div class="screen hidden" id="gameOverScreen">
+      <h1 class="game-over-title">FIN DEL JUEGO</h1>
+      <p>Puntaje Final: <span id="finalScore">0</span></p>
+      <button id="restartButton">REINTENTAR</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

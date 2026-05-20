@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Press Start 2P', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+}
+
+.game-container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  border: 4px solid #00ff88;
+  box-shadow: 0 0 20px #00ff8880, inset 0 0 20px #00ff8840;
+  background: radial-gradient(circle, #091a14 0%, #020805 100%);
+  border-radius: 8px;
+}
+
+#gameCanvas {
+  display: block;
+  background: transparent;
+}
+
+.ui-bar {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #00ff88;
+  z-index: 5;
+  text-shadow: 0 0 5px #00ff8880;
+}
+
+.combo-container {
+  color: #ffff00;
+  text-shadow: 0 0 5px #ffff0080;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(2, 8, 5, 0.9);
+  z-index: 10;
+  text-align: center;
+  padding: 20px;
+}
+
+.screen.hidden {
+  display: none;
+}
+
+h1 {
+  font-size: 32px;
+  color: #00ff88;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #00ff88aa, 0 0 20px #00ff8866;
+  letter-spacing: 2px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+.game-over-title {
+  color: #ff3333;
+  text-shadow: 0 0 10px #ff3333aa, 0 0 20px #ff333366;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #ffff00;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+button {
+  font-family: 'Press Start 2P', monospace;
+  background: transparent;
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px #00ff8840;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #00ff88;
+  color: #000;
+  box-shadow: 0 0 20px #00ff8899;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.controls-info {
+  font-size: 10px;
+  color: #888;
+  line-height: 2;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.03);
+  }
+}

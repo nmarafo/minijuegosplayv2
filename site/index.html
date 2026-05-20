@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MinijuegosPlay V2 | Tu Portal de Juegos Premium</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <!-- Ambient Background Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <i class="fa-solid fa-gamepad-alt"></i>
+        <span>MINIJUEGOS<span>PLAY</span> <small>V2</small></span>
+      </div>
+      
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Buscar juego...">
+      </div>
+
+      <div class="nav-actions">
+        <button id="showFavoritesBtn" class="btn-icon" title="Ver Favoritos">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="main-container">
+    
+    <!-- Hero / Featured Game Section -->
+    <section class="hero-section" id="heroSection">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fa-solid fa-fire"></i> DESTACADO</span>
+        <h1 id="heroTitle">Cargando...</h1>
+        <p id="heroDesc">Prepárate para la mejor experiencia arcade.</p>
+        <div class="hero-actions">
+          <button id="heroPlayBtn" class="btn btn-primary"><i class="fa-solid fa-play"></i> Jugar Ahora</button>
+        </div>
+      </div>
+      <div class="hero-image-container" id="heroImageBg">
+        <!-- Background image or canvas/css neon pattern -->
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+      <div class="categories-container" id="categoriesContainer">
+        <button class="category-btn active" data-category="all">Todos</button>
+        <button class="category-btn" data-category="Acción">Acción</button>
+        <button class="category-btn" data-category="Arcade">Arcade</button>
+        <button class="category-btn" data-category="Habilidad">Habilidad</button>
+      </div>
+    </section>
+
+    <!-- Content Grid & Sidebar -->
+    <div class="content-wrapper">
+      
+      <!-- Games Grid -->
+      <section class="games-grid-section">
+        <h2 class="section-title">Nuestros Juegos</h2>
+        <div class="games-grid" id="gamesGrid">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </section>
+
+      <!-- Sidebar -->
+      <aside class="sidebar-section">
+        
+        <!-- Recently Played -->
+        <div class="sidebar-card">
+          <h3><i class="fa-solid fa-clock-rotate-left"></i> Recientes</h3>
+          <div class="recent-list" id="recentList">
+            <p class="empty-state">No has jugado nada recientemente.</p>
+          </div>
+        </div>
+
+        <!-- Favorites List -->
+        <div class="sidebar-card">
+          <h3><i class="fa-solid fa-heart"></i> Favoritos</h3>
+          <div class="favorites-list" id="favoritesList">
+            <p class="empty-state">No tienes juegos favoritos agregados.</p>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 MinijuegosPlay V2. Diseñado con pasión y tecnologías web puras.</p>
+      <div class="footer-links">
+        <a href="https://github.com/nmarafo/minijuegosplayv2" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Game Player Modal overlay -->
+  <div class="player-modal hidden" id="playerModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-container">
+      
+      <div class="modal-sidebar">
+        <div class="sidebar-header">
+          <button id="closePlayerBtn" class="btn btn-close"><i class="fa-solid fa-arrow-left"></i> Volver</button>
+        </div>
+        <div class="sidebar-info">
+          <h2 id="modalGameTitle">Game Title</h2>
+          <span class="category-tag" id="modalGameCategory">Category</span>
+          <p class="game-desc" id="modalGameDesc">Description</p>
+          
+          <div class="instructions-card">
+            <h4><i class="fa-solid fa-gamepad"></i> Instrucciones:</h4>
+            <p id="modalGameInstructions">Instructions text...</p>
+          </div>
+        </div>
+        <div class="sidebar-footer">
+          <button id="modalFavBtn" class="btn btn-secondary btn-full"><i class="fa-solid fa-heart"></i> Favorito</button>
+        </div>
+      </div>
+
+      <div class="modal-player-view">
+        <div class="player-toolbar">
+          <span class="status-indicator"><span class="dot"></span> Online</span>
+          <div class="toolbar-actions">
+            <button id="restartGameBtn" title="Reiniciar Juego"><i class="fa-solid fa-rotate-right"></i></button>
+            <button id="fullscreenBtn" title="Pantalla Completa"><i class="fa-solid fa-expand"></i></button>
+          </div>
+        </div>
+        <div class="iframe-wrapper">
+          <iframe id="gameIframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "space-defender",
+    "name": "Space Defender",
+    "description": "Pilota tu nave espacial y destruye las oleadas de invasores alienígenas en este clásico shooter arcade con sonido retro sintetizado.",
+    "category": "Acción",
+    "path": "/games/space-defender/index.html",
+    "thumbnail": "/site/assets/space_defender.png",
+    "instructions": "Usa A/D o las flechas de dirección para moverte. Pulsa la barra Espaciadora para disparar tu cañón láser.",
+    "color": "#00ffcc"
+  },
+  {
+    "id": "brick-breaker",
+    "name": "Neon Brick Breaker",
+    "description": "Destruye bloques de neón con físicas fluidas, colecciona power-ups especiales y compite por la puntuación más alta.",
+    "category": "Arcade",
+    "path": "/games/brick-breaker/index.html",
+    "thumbnail": "/site/assets/brick_breaker.png",
+    "instructions": "Mueve el puntero del ratón o toca la pantalla para desplazar la paleta. Golpea la bola para romper todos los ladrillos.",
+    "color": "#ff00ff"
+  },
+  {
+    "id": "stack-rush",
+    "name": "Stack Rush",
+    "description": "Apila bloques dinámicos uno encima del otro. Mantén el ritmo para lograr combos y construir la torre más alta.",
+    "category": "Habilidad",
+    "path": "/games/stack-rush/index.html",
+    "thumbnail": "/site/assets/stack_rush.png",
+    "instructions": "Pulsa la barra Espaciadora o haz click/toca en la pantalla para soltar y apilar el bloque en movimiento sobre el anterior.",
+    "color": "#00ff88"
+  }
+]
