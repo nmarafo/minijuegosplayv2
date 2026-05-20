@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fetch games registry
 async function loadGames() {
   try {
-    const response = await fetch('/site/games.json');
+    const response = await fetch('games.json');
     if (!response.ok) throw new Error('Error al cargar games.json');
     state.games = await response.json();
     
