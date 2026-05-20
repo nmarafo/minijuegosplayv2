@@ -734,15 +734,20 @@ function updateUI() {
 
 // AABB Collision utility
 function getIntersection(r1, r2) {
+  const r1Width = r1.width !== undefined ? r1.width : r1.w;
+  const r1Height = r1.height !== undefined ? r1.height : r1.h;
+  const r2Width = r2.width !== undefined ? r2.width : r2.w;
+  const r2Height = r2.height !== undefined ? r2.height : r2.h;
+
   const r1Left = r1.x;
-  const r1Right = r1.x + r1.width;
+  const r1Right = r1.x + r1Width;
   const r1Top = r1.y;
-  const r1Bottom = r1.y + r1.height;
+  const r1Bottom = r1.y + r1Height;
   
   const r2Left = r2.x;
-  const r2Right = r2.x + r2.width;
+  const r2Right = r2.x + r2Width;
   const r2Top = r2.y;
-  const r2Bottom = r2.y + r2.height;
+  const r2Bottom = r2.y + r2Height;
 
   if (r1Right <= r2Left || r1Left >= r2Right || r1Bottom <= r2Top || r1Top >= r2Bottom) {
     return null; // No collision
