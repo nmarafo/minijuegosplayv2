@@ -788,15 +788,13 @@ function update() {
     
     let overlap = getIntersection(player, plat);
     if (overlap) {
-      if (overlap.x < overlap.y) {
-        // Resolve horizontal
-        if (player.vx > 0) {
-          player.x -= overlap.x;
-        } else {
-          player.x += overlap.x;
-        }
-        player.vx = 0;
+      // Resolve horizontal
+      if (player.vx > 0) {
+        player.x -= overlap.x;
+      } else if (player.vx < 0) {
+        player.x += overlap.x;
       }
+      player.vx = 0;
     }
   });
 
@@ -813,24 +811,22 @@ function update() {
 
     let overlap = getIntersection(player, plat);
     if (overlap) {
-      if (overlap.y < overlap.x) {
-        // Resolve vertical
-        if (player.vy > 0) {
-          // Standing on top of platform
-          player.y -= overlap.y;
-          player.vy = 0;
-          player.grounded = true;
-          
-          // Squash effect on landing
-          if (player.squashY < 0.95) {
-            player.squashY = 0.8;
-            player.squashX = 1.2;
-          }
-        } else {
-          // Head bump
-          player.y += overlap.y;
-          player.vy = 0;
+      // Resolve vertical
+      if (player.vy > 0) {
+        // Standing on top of platform
+        player.y -= overlap.y;
+        player.vy = 0;
+        player.grounded = true;
+        
+        // Squash effect on landing
+        if (player.squashY < 0.95) {
+          player.squashY = 0.8;
+          player.squashX = 1.2;
         }
+      } else if (player.vy < 0) {
+        // Head bump
+        player.y += overlap.y;
+        player.vy = 0;
       }
     }
   });
