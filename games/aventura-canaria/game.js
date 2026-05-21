@@ -389,7 +389,7 @@ const LEVELS = [
 
       // Spawn Enemies
       enemies = [
-        { x: 350, y: 480, minX: 100, maxX: 450, vx: 1.5, type: 'lava_slime', color: '#ff3300' },
+        { x: 350, y: 480, minX: 220, maxX: 450, vx: 1.5, type: 'lava_slime', color: '#ff3300' },
         { x: 700, y: 480, minX: 620, maxX: 950, vx: -2, type: 'lava_slime', color: '#ff3300' },
         { x: 1900, y: 440, minX: 1820, maxX: 2350, vx: 2.2, type: 'lava_slime', color: '#ff3300' }
       ];
@@ -468,7 +468,7 @@ const LEVELS = [
         { x: 500, y: 440, w: 250, h: 30, type: 'normal' },
         { x: 850, y: 370, w: 200, h: 30, type: 'normal' },
         { x: 1150, y: 450, w: 300, h: 30, type: 'normal' },
-        { x: 1550, y: 350, w: 100, h: 20, type: 'normal' },
+        { x: 1520, y: 360, w: 120, h: 20, type: 'normal' },
         { x: 1750, y: 420, w: 150, h: 20, type: 'normal' },
         { x: 1980, y: 500, w: 500, h: 100, type: 'normal' },
         
@@ -476,20 +476,20 @@ const LEVELS = [
         { x: 400, y: 580, w: 1580, h: 20, type: 'spikes' },
         
         // Extra high platform nodes
-        { x: 200, y: 360, w: 100, h: 20, type: 'normal' },
-        { x: 1350, y: 280, w: 120, h: 20, type: 'normal' }
+        { x: 200, y: 420, w: 100, h: 20, type: 'normal' },
+        { x: 1350, y: 340, w: 120, h: 20, type: 'normal' }
       ];
 
       items = [
-        { x: 250, y: 300, collected: false },
+        { x: 250, y: 370, collected: false },
         { x: 620, y: 380, collected: false },
         { x: 950, y: 310, collected: false },
-        { x: 1400, y: 220, collected: false },
+        { x: 1400, y: 290, collected: false },
         { x: 2100, y: 440, collected: false }
       ];
 
       enemies = [
-        { x: 200, y: 480, minX: 30, maxX: 350, vx: 1.8, type: 'forest_bug', color: '#00ffaa' },
+        { x: 250, y: 480, minX: 200, maxX: 350, vx: 1.8, type: 'forest_bug', color: '#00ffaa' },
         { x: 1250, y: 410, minX: 1160, maxX: 1420, vx: -2, type: 'forest_bug', color: '#00ffaa' },
         { x: 2150, y: 460, minX: 2000, maxX: 2380, vx: 1.5, type: 'forest_bug', color: '#00ffaa' }
       ];
@@ -579,7 +579,7 @@ const LEVELS = [
       ];
 
       enemies = [
-        { x: 250, y: 480, minX: 50, maxX: 400, vx: 2, type: 'sand_crab', color: '#ffcc00' },
+        { x: 300, y: 480, minX: 200, maxX: 400, vx: 2, type: 'sand_crab', color: '#ffcc00' },
         { x: 920, y: 320, minX: 810, maxX: 1080, vx: -1.5, type: 'sand_crab', color: '#ffcc00' },
         { x: 2150, y: 480, minX: 2060, maxX: 2360, vx: 2.5, type: 'sand_crab', color: '#ffcc00' }
       ];
